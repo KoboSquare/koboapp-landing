@@ -92,12 +92,12 @@ const navLinks = [
                                     r='52.25'
                                     fill='#F3F8F8'
                                     stroke='#93A8A7'
-                                    stroke-width='0.5'
+                                    strokeWidth='0.5'
                                 />
                                 <path
                                     d='M55.8477 43.3892L65.4585 53L55.8477 62.6108'
                                     stroke='#93A8A7'
-                                    stroke-width='1.5'
+                                    strokeWidth='1.5'
                                     stroke-miterlimit='10'
                                     stroke-linecap='round'
                                     stroke-linejoin='round'
@@ -105,7 +105,7 @@ const navLinks = [
                                 <path
                                     d='M38.5415 53H65.189'
                                     stroke='#93A8A7'
-                                    stroke-width='1.5'
+                                    strokeWidth='1.5'
                                     stroke-miterlimit='10'
                                     stroke-linecap='round'
                                     stroke-linejoin='round'
@@ -193,7 +193,22 @@ const navLinks = [
 
 export default function Header() {
     return (
-        <header className='container mx-auto flex justify-between items-center py-5'>
+        <>
+            <div className="hidden md:block">
+                <DesktopHeader />
+            </div>
+            <div className="md:hidden">
+                <MobileHeader />
+            </div>
+
+
+        </>
+    )
+}
+
+function DesktopHeader() {
+    return (
+        <header className='container mx-auto flex justify-between items-center py-5 px-4'>
             <Image src={logo} alt='Logo' width={100} height={100} />
 
             <div className='flex gap-5'>
@@ -209,6 +224,19 @@ export default function Header() {
                     )
                 )}
             </div>
+
+            <Button variant='default' style={{ backgroundColor: "#009A74", color: "white", borderColor: "#008E6A" }}>
+                Get Started
+            </Button>
+        </header>
+    );
+}
+
+function MobileHeader() {
+    return (
+        <header className='container mx-auto flex justify-between items-center py-5 px-4'>
+            <Image src={logo} alt='Logo' width={100} height={100} />
+
 
             <Button variant='default' style={{ backgroundColor: "#009A74", color: "white", borderColor: "#008E6A" }}>
                 Get Started
