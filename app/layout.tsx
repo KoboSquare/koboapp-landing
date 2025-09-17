@@ -6,6 +6,8 @@ import '@mantine/core/styles.css';
 import { ColorSchemeScript, mantineHtmlProps } from '@mantine/core';
 import { ThemeProvider } from "@/components/theme-provider";
 
+import { Analytics } from "@vercel/analytics/next"
+
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
@@ -33,6 +35,7 @@ export default async function RootLayout({
       >
         <ThemeProvider>
           {children}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
