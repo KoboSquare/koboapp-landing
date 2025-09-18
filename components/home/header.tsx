@@ -12,25 +12,24 @@ import koboRideImage from "@/assets/images/koboRide.png";
 const navLinks = [
   {
     label: "Products",
-    href: "/products",
+    href: "/",
     children: (
-      <div className="grid grid-cols-3 gap-8 container mx-auto p-4 rounded-2xl rounded-b-2xl">
+      <div className='grid grid-cols-3 gap-8 container mx-auto p-4 rounded-2xl rounded-b-2xl'>
         <Link
-          href="/products"
-          className="rounded-xl bg-[#0A1B1B] flex flex-col relative h-[240px]"
-        >
-          <div className="p-5 flex flex-col gap-1">
-            <h2 className="text-white font-bold">Kobo Vault</h2>
-            <h6 className="text-[#B5BBBB]">
+          href='/personal'
+          className='rounded-xl bg-[#0A1B1B] flex flex-col relative h-[240px]'>
+          <div className='p-5 flex flex-col gap-1'>
+            <h2 className='text-white font-bold'>Kobo Vault</h2>
+            <h6 className='text-[#B5BBBB]'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </h6>
           </div>
 
-          <div className="bg-[#203C3A] rounded-t-xl absolute bottom-0 right-3">
+          <div className='bg-[#203C3A] rounded-t-xl absolute bottom-0 right-3'>
             <Image
-              className="mt-2 mr-2 rounded-t-xl"
+              className='mt-2 mr-2 rounded-t-xl'
               src={vaultImage}
-              alt="vault"
+              alt='vault'
               width={240}
               height={240}
             />
@@ -38,37 +37,36 @@ const navLinks = [
         </Link>
 
         <Link
-          href="/products"
-          className="rounded-xl border border-[#B0D0CE] flex flex-col relative h-[240px]"
-        >
-          <div className="p-5 flex flex-col gap-1">
-            <div className="flex gap-2 items-center">
-              <h2 className="font-bold">Kobo Ride</h2>
-              <span className="text-[#FC8541] bg-[#FFEFE8] px-2 py-1 rounded-md text-xs">
+          href='/products'
+          className='rounded-xl border border-[#B0D0CE] flex flex-col relative h-[240px]'>
+          <div className='p-5 flex flex-col gap-1'>
+            <div className='flex gap-2 items-center'>
+              <h2 className='font-bold'>Kobo Ride</h2>
+              <span className='text-[#FC8541] bg-[#FFEFE8] px-2 py-1 rounded-md text-xs'>
                 Coming Soon
               </span>
             </div>
-            <h6 className="">
+            <h6 className=''>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </h6>
           </div>
 
-          <div className="bg-[#203C3A]  rounded-t-xl absolute bottom-0 right-3">
+          <div className='bg-[#203C3A]  rounded-t-xl absolute bottom-0 right-3'>
             <Image
-              className="mt-2 mr-2 rounded-t-xl"
+              className='mt-2 mr-2 rounded-t-xl'
               src={koboRideImage}
-              alt="kobo-ride"
+              alt='kobo-ride'
               width={240}
               height={240}
             />
           </div>
         </Link>
 
-        <div className="flex gap-10">
-          <div className="py-2 flex flex-col justify-between">
-            <div className="flex gap-2 items-center mb-2">
-              <h2 className="font-bold">More Products</h2>
-              <span className="text-[#FC8541] bg-[#FFEFE8] px-2 py-1 rounded-md text-xs">
+        <div className='flex gap-10'>
+          <div className='py-2 flex flex-col justify-between'>
+            <div className='flex gap-2 items-center mb-2'>
+              <h2 className='font-bold'>More Products</h2>
+              <span className='text-[#FC8541] bg-[#FFEFE8] px-2 py-1 rounded-md text-xs'>
                 Coming Soon
               </span>
             </div>
@@ -80,38 +78,37 @@ const navLinks = [
             <h6>Kobo Send & Delivery</h6>
           </div>
 
-          <div className="self-center">
-            <Link href="/products">
+          <div className='self-center'>
+            <Link href='/products'>
               <svg
-                width="105"
-                height="105"
-                viewBox="0 0 105 105"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+                width='105'
+                height='105'
+                viewBox='0 0 105 105'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'>
                 <circle
-                  cx="52.5"
-                  cy="52.5"
-                  r="52.25"
-                  fill="#F3F8F8"
-                  stroke="#93A8A7"
-                  strokeWidth="0.5"
+                  cx='52.5'
+                  cy='52.5'
+                  r='52.25'
+                  fill='#F3F8F8'
+                  stroke='#93A8A7'
+                  strokeWidth='0.5'
                 />
                 <path
-                  d="M55.8477 43.3892L65.4585 53L55.8477 62.6108"
-                  stroke="#93A8A7"
-                  strokeWidth="1.5"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  d='M55.8477 43.3892L65.4585 53L55.8477 62.6108'
+                  stroke='#93A8A7'
+                  strokeWidth='1.5'
+                  stroke-miterlimit='10'
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
                 />
                 <path
-                  d="M38.5415 53H65.189"
-                  stroke="#93A8A7"
-                  strokeWidth="1.5"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  d='M38.5415 53H65.189'
+                  stroke='#93A8A7'
+                  strokeWidth='1.5'
+                  stroke-miterlimit='10'
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
                 />
               </svg>
             </Link>
@@ -124,24 +121,23 @@ const navLinks = [
     label: "Company",
     href: "/about",
     children: (
-      <div className="grid grid-cols-2 gap-8 p-4">
+      <div className='grid grid-cols-2 gap-8 p-4'>
         <div>
           <Link
-            href="/about"
-            className="rounded-xl border border-[#B0D0CE] flex flex-col relative h-[240px]"
-          >
-            <div className="p-5 flex flex-col gap-1">
-              <h2 className="font-bold">About Us</h2>
-              <h6 className="">
+            href='/about'
+            className='rounded-xl border border-[#B0D0CE] flex flex-col relative h-[240px]'>
+            <div className='p-5 flex flex-col gap-1'>
+              <h2 className='font-bold'>About Us</h2>
+              <h6 className=''>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </h6>
             </div>
 
-            <div className="bg-[#B0D0CE]  rounded-t-xl absolute bottom-0 right-3">
+            <div className='bg-[#B0D0CE]  rounded-t-xl absolute bottom-0 right-3'>
               <Image
-                className="mt-2 mr-2 rounded-t-xl"
+                className='mt-2 mr-2 rounded-t-xl'
                 src={aboutImage}
-                alt="about"
+                alt='about'
                 width={240}
                 height={240}
               />
@@ -149,21 +145,20 @@ const navLinks = [
           </Link>
         </div>
 
-        <div className="flex flex-col gap-2 h-full">
+        <div className='flex flex-col gap-2 h-full'>
           <Link
-            href="/careers"
-            className="h-[50%] rounded-xl bg-[#0A1B1B] border border-[#B0D0CE] relative"
-          >
-            <div className="p-5 flex flex-col gap-1">
-              <h2 className="font-bold text-white">Careers</h2>
-              <h6 className="text-[#B5BBBB]">Join a team of mavericks.</h6>
+            href='/careers'
+            className='h-[50%] rounded-xl bg-[#0A1B1B] border border-[#B0D0CE] relative'>
+            <div className='p-5 flex flex-col gap-1'>
+              <h2 className='font-bold text-white'>Careers</h2>
+              <h6 className='text-[#B5BBBB]'>Join a team of mavericks.</h6>
             </div>
 
-            <div className="bg-[#203C3A] rounded-t-xl absolute bottom-0 right-0">
+            <div className='bg-[#203C3A] rounded-t-xl absolute bottom-0 right-0'>
               <Image
-                className="mt-2 mr-2 rounded-t-xl"
+                className='mt-2 mr-2 rounded-t-xl'
                 src={careerImage}
-                alt="career"
+                alt='career'
                 width={140}
                 height={140}
               />
@@ -171,19 +166,18 @@ const navLinks = [
           </Link>
 
           <Link
-            href="/press"
-            className="h-[50%] rounded-xl border border-[#B0D0CE] relative"
-          >
-            <div className="p-5 flex flex-col gap-1">
-              <h2 className="font-bold">Press</h2>
-              <h6 className="text-[#363E3F]">Lorem ipsum dolor sit amet.</h6>
+            href='/press'
+            className='h-[50%] rounded-xl border border-[#B0D0CE] relative'>
+            <div className='p-5 flex flex-col gap-1'>
+              <h2 className='font-bold'>Press</h2>
+              <h6 className='text-[#363E3F]'>Lorem ipsum dolor sit amet.</h6>
             </div>
 
-            <div className="bg-[#B0D0CE] rounded-t-xl absolute bottom-0 right-0">
+            <div className='bg-[#B0D0CE] rounded-t-xl absolute bottom-0 right-0'>
               <Image
-                className="mt-2 mr-2 rounded-t-xl"
+                className='mt-2 mr-2 rounded-t-xl'
                 src={pressImage}
-                alt="press"
+                alt='press'
                 width={140}
                 height={140}
               />
@@ -200,10 +194,10 @@ const navLinks = [
 export default function Header() {
   return (
     <>
-      <div className="hidden md:block">
+      <div className='hidden md:block z-50'>
         <DesktopHeader />
       </div>
-      <div className="md:hidden">
+      <div className='md:hidden z-50'>
         <MobileHeader />
       </div>
     </>
@@ -212,10 +206,18 @@ export default function Header() {
 
 function DesktopHeader() {
   return (
-    <header className="container mx-auto flex justify-between items-center py-5 px-4">
-      <Image src={logo} alt="Logo" width={100} height={100} />
+    <header className='container mx-auto flex justify-between items-center py-5 px-4'>
+      <Link href='/'>
+        <Image
+          src={logo}
+          className='z-50'
+          alt='Logo'
+          width={100}
+          height={100}
+        />
+      </Link>
 
-      <div className="flex gap-5">
+      <div className='flex gap-5'>
         {navLinks.map((link) =>
           link.children ? (
             <NavMenu key={link.label} label={link.label}>
@@ -223,7 +225,7 @@ function DesktopHeader() {
             </NavMenu>
           ) : (
             <Link href={link.href} key={link.label}>
-              <Button variant="subtle" color="white">
+              <Button variant='subtle' color='white'>
                 {link.label}
               </Button>
             </Link>
@@ -232,13 +234,12 @@ function DesktopHeader() {
       </div>
 
       <Button
-        variant="default"
+        variant='default'
         style={{
           backgroundColor: "#009A74",
           color: "white",
           borderColor: "#008E6A",
-        }}
-      >
+        }}>
         Get Started
       </Button>
     </header>
@@ -247,17 +248,16 @@ function DesktopHeader() {
 
 function MobileHeader() {
   return (
-    <header className="container mx-auto flex justify-between items-center py-5 px-4">
-      <Image src={logo} alt="Logo" width={100} height={100} />
+    <header className='container mx-auto flex justify-between items-center py-5 px-4'>
+      <Image src={logo} alt='Logo' width={100} height={100} />
 
       <Button
-        variant="default"
+        variant='default'
         style={{
           backgroundColor: "#009A74",
           color: "white",
           borderColor: "#008E6A",
-        }}
-      >
+        }}>
         Get Started
       </Button>
     </header>
