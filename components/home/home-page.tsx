@@ -16,15 +16,15 @@ import VirtualCardBanner from "./virtualcard-banner";
 function HomePage() {
   return (
     <div>
-      <div className='flex flex-col h-[80dvh] relative'>
+      <div className="flex flex-col h-[80dvh] relative">
         <Image
           src={heroBg}
           priority
-          alt='hero-bg'
+          alt="hero-bg"
           fill
-          className='object-cover z-0'
+          className="object-cover z-0"
         />
-        <div className='absolute top-0 left-0 right-0 bottom-0 z-10'>
+        <div className="absolute top-0 left-0 right-0 bottom-0 z-10">
           <Header />
           <Hero />
           <KoboConnect />

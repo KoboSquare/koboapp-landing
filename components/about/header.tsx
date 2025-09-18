@@ -1,8 +1,8 @@
 import Image from "next/image";
-import logo from "@/assets/logo.svg";
+import logo from "@/assets/Logo2.svg";
 import Link from "next/link";
 import { Button } from "@mantine/core";
-import NavMenu from "./nav-menu";
+import NavMenu from "../about/nav-menu";
 import vaultImage from "@/assets/images/koboVault.png";
 import aboutImage from "@/assets/images/aboutUs.png";
 import careerImage from "@/assets/images/careers.png";
@@ -223,7 +223,13 @@ function DesktopHeader() {
             </NavMenu>
           ) : (
             <Link href={link.href} key={link.label}>
-              <Button variant="subtle" color="white">
+              <Button
+                variant="subtle"
+                style={{
+                  color: "#363E3F",
+                  "--button-color": "#363E3F",
+                }}
+              >
                 {link.label}
               </Button>
             </Link>
