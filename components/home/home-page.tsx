@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "./hero";
-import Header from "./header";
+import Header from "../shared/header";
 import Image from "next/image";
 import heroBg from "@/assets/images/heroBg.png";
 import KoboConnect from "./kobo-connect";
@@ -12,6 +12,8 @@ import Faq from "./faq";
 import GetStartedCta from "./getstarted-cta";
 import Footer from "../shared/footer";
 import VirtualCardBanner from "./virtualcard-banner";
+
+import logo from "@/assets/logo.svg";
 
 function HomePage() {
   return (
@@ -25,7 +27,7 @@ function HomePage() {
             fill
             className='object-cover absolute inset-0 z-0'
           />
-          <Header />
+          <Header textColor='white' logo={<Image src={logo} alt='Logo' width={100} height={100} />} />
           <Hero />
         </section>
         <KoboConnect />

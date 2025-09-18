@@ -1,8 +1,8 @@
 import Image from "next/image";
-import logo from "@/assets/logo.svg";
+import logo from "@/assets/Logo2.svg";
 import Link from "next/link";
 import { Button } from "@mantine/core";
-import NavMenu from "./nav-menu";
+import NavMenu from "../home/nav-menu";
 import vaultImage from "@/assets/images/koboVault.png";
 import aboutImage from "@/assets/images/aboutUs.png";
 import careerImage from "@/assets/images/careers.png";
@@ -191,11 +191,11 @@ const navLinks = [
   { label: "Help", href: "/help" },
 ];
 
-export default function Header() {
+export default function Header({ textColor, logo }: { textColor: string, logo: React.ReactNode }) {
   return (
     <>
       <div className='hidden md:block z-50'>
-        <DesktopHeader />
+        <DesktopHeader textColor={textColor} logo={logo} />
       </div>
       <div className='md:hidden z-50'>
         <MobileHeader />
@@ -204,28 +204,22 @@ export default function Header() {
   );
 }
 
-function DesktopHeader() {
+function DesktopHeader({ textColor = "white", logo }: { textColor: string, logo: React.ReactNode }) {
   return (
     <header className='container mx-auto flex justify-between items-center py-5 px-4'>
-      <Link href='/'>
-        <Image
-          src={logo}
-          className='z-50'
-          alt='Logo'
-          width={100}
-          height={100}
-        />
+      <Link href="/">
+        {logo}
       </Link>
 
       <div className='flex gap-5'>
         {navLinks.map((link) =>
           link.children ? (
-            <NavMenu key={link.label} label={link.label}>
+            <NavMenu key={link.label} label={link.label} color={textColor}>
               {link.children}{" "}
             </NavMenu>
           ) : (
             <Link href={link.href} key={link.label}>
-              <Button variant='subtle' color='white'>
+              <Button variant='subtle' color={textColor}>
                 {link.label}
               </Button>
             </Link>
