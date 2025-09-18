@@ -6,12 +6,12 @@ import {
 } from '@tabler/icons-react';
 import { useState } from 'react';
 
-function NavMenu({ label, children }: { label: string, children: React.ReactNode }) {
+function NavMenu({ label, children, color = "white" }: { label: string, children: React.ReactNode, color?: string }) {
     const [opened, setOpened] = useState(false);
     return (
         <Menu shadow="md" opened={opened} onOpen={() => setOpened(true)} onClose={() => setOpened(false)} trigger="hover" openDelay={100} closeDelay={400}>
             <Menu.Target>
-                <Button variant="subtle" color="white" rightSection={
+                <Button variant="subtle" color={color} rightSection={
                     opened ? <IconChevronUp size={14} /> : <IconChevronDown size={14} />
                 } onClick={() => setOpened(!opened)}>{label}</Button>
             </Menu.Target>
