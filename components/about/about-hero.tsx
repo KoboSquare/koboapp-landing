@@ -110,16 +110,16 @@ export default function AboutHero() {
               What is Kobo Connect?
             </p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] lg:leading-[44px] xl:leading-[48px] font-semibold text-[#010101] mt-2.5 mb-4 lg:mb-6">
-              Africa's next-generation
+              Africa&apos;s next-generation
               <br className="hidden sm:block" /> super app.
             </h2>
             <p className="text-[#363E3F] leading-6 sm:leading-7 lg:leading-8 text-base sm:text-lg font-normal">
               Kobo Connect is a next-generation digital platform designed to
               simplify everyday life across Africa. From a single app, users can
               chat, ride, shop, send, pay, book local services, and even access
-              healthcare — all seamlessly connected in one ecosystem. We're
-              building Africa's most inclusive and culturally relevant super
-              app, crafted for everyday people, local businesses, and
+              healthcare — all seamlessly connected in one ecosystem. We&apos;re
+              building Africa&apos;s most inclusive and culturally relevant
+              super app, crafted for everyday people, local businesses, and
               underserved communities.
             </p>
           </div>

@@ -18,11 +18,11 @@ function VirtualCardBanner() {
 
                     <svg className='absolute inset-[100px] z-10' width="277" height="278" viewBox="0 0 277 278" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g filter="url(#filter0_f_2166_833)">
-                            <circle cx="138.5" cy="138.939" r="88.5" fill="#0A1B1B" fill-opacity="0.5" />
+                            <circle cx="138.5" cy="138.939" r="88.5" fill="#0A1B1B" fillOpacity="0.5" />
                         </g>
                         <defs>
-                            <filter id="filter0_f_2166_833" x="0" y="0.439453" width="277" height="277" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <filter id="filter0_f_2166_833" x="0" y="0.439453" width="277" height="277" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                                 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
                                 <feGaussianBlur stdDeviation="25" result="effect1_foregroundBlur_2166_833" />
                             </filter>
@@ -31,11 +31,11 @@ function VirtualCardBanner() {
 
                     <svg className='absolute inset-0 z-10' width="383" height="384" viewBox="0 0 383 384" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g filter="url(#filter0_f_2166_832)">
-                            <circle cx="191.5" cy="191.939" r="141.5" fill="#0A1B1B" fill-opacity="0.3" />
+                            <circle cx="191.5" cy="191.939" r="141.5" fill="#0A1B1B" fillOpacity="0.3" />
                         </g>
                         <defs>
-                            <filter id="filter0_f_2166_832" x="0" y="0.439453" width="383" height="383" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <filter id="filter0_f_2166_832" x="0" y="0.439453" width="383" height="383" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                                 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
                                 <feGaussianBlur stdDeviation="25" result="effect1_foregroundBlur_2166_832" />
                             </filter>
