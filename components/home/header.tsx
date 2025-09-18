@@ -12,11 +12,11 @@ import koboRideImage from "@/assets/images/koboRide.png";
 const navLinks = [
     {
         label: "Products",
-        href: "/products",
+        href: "/",
         children: (
             <div className='grid grid-cols-3 gap-8 container mx-auto p-4 rounded-2xl rounded-b-2xl'>
                 <Link
-                    href='/products'
+                    href='/personal'
                     className='rounded-xl bg-[#0A1B1B] flex flex-col relative h-[240px]'>
                     <div className='p-5 flex flex-col gap-1'>
                         <h2 className='text-white font-bold'>Kobo Vault</h2>
@@ -194,10 +194,10 @@ const navLinks = [
 export default function Header() {
     return (
         <>
-            <div className="hidden md:block">
+            <div className="hidden md:block z-50">
                 <DesktopHeader />
             </div>
-            <div className="md:hidden">
+            <div className="md:hidden z-50">
                 <MobileHeader />
             </div>
 
@@ -209,7 +209,9 @@ export default function Header() {
 function DesktopHeader() {
     return (
         <header className='container mx-auto flex justify-between items-center py-5 px-4'>
-            <Image src={logo} alt='Logo' width={100} height={100} />
+            <Link href="/">
+                <Image src={logo} className='z-50' alt='Logo' width={100} height={100} />
+            </Link>
 
             <div className='flex gap-5'>
                 {navLinks.map((link) =>
