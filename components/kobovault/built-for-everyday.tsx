@@ -5,11 +5,11 @@ import transactionCard from '@/assets/images/transactionCard.png'
 
 function BuiltForEveryday() {
     return (
-        <div className='container mx-auto py-14 md:py-16 px-4 max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center'>
+        <div className='container max-w-6xl mx-auto py-6 md:py-10 px-4 flex flex-col md:flex-row gap-8 md:gap-20 items-center'>
 
             <div className='relative'>
-                <Image src={MapSvg} alt='map-svg' width={480} height={480} priority className='object-contain' />
-                <Image src={transactionCard} alt='transaction-card' width={160} height={160} priority className='object-contain absolute bottom-0 right-0' />
+                <Image src={MapSvg} alt='map-svg' width={600} height={600} className='object-cover' />
+                <Image src={transactionCard} alt='transaction-card' width={140} height={140} className='object-contain absolute bottom-3 right-0' />
             </div>
 
 

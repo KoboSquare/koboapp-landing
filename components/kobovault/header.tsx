@@ -9,16 +9,14 @@ import Image from 'next/image';
 
 export default function Header() {
     return (
-        <>
-            <div className="hidden md:block z-50">
+        <div className="z-20 bg-[#0A1B1B]">
+            <div className="hidden md:block">
                 <DesktopHeader />
             </div>
-            <div className="md:hidden z-50">
+            <div className="md:hidden">
                 <MobileHeader />
             </div>
-
-
-        </>
+        </div>
     )
 }
 

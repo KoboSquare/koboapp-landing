@@ -4,13 +4,14 @@ import totalControlImage from '@/assets/images/totalControlImage.png'
 
 function TotalControl() {
     return (
-        <div className='container mx-auto py-14 md:py-16 px-4 max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-end'>
-            <div className='flex justify-center items-center'>
-                <Image src={totalControlImage} alt='total-control' width={360} height={360} priority className='object-contain' />
+        <div className='container max-w-6xl mx-auto py-6 md:py-10 px-4 flex flex-col md:flex-row gap-8 md:gap-16 items-end'>
+            <div className='relative'>
+                <Image src={totalControlImage} alt='total-control' width={400} height={400} priority className='object-cover' />
             </div>
 
 
-            <div className='space-y-8 py-4 md:py-6 pr-4'>
+
+            <div className='space-y-8 py-6 md:py-8 pr-4'>
                 <div className='space-y-4 pb-2'>
                     <h2 className='text-2xl md:text-4xl font-semibold'>Total Control Over Your Money</h2>
                     <p className='text-lg font-medium'>

@@ -4,7 +4,7 @@ import transactionImage from '@/assets/images/manCheckingTransaction.png'
 
 function Security() {
     return (
-        <div className='container mx-auto py-14 md:py-16 px-4 max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center'>
+        <div className='container max-w-6xl mx-auto py-6 md:py-10 px-4 flex flex-col md:flex-row gap-8 md:gap-12 items-center'>
             <div className='space-y-8 py-4 md:py-6 pr-4'>
                 <div className='space-y-4 pb-2'>
                     <h2 className='text-2xl md:text-4xl font-semibold text-[#010101]'>Security You Can Trust</h2>
@@ -56,8 +56,8 @@ function Security() {
             </div>
 
 
-            <div>
-                <Image src={transactionImage} alt='transaction-image' width={500} height={500} priority className='object-contain' />
+            <div className=''>
+                <Image src={transactionImage} alt='transaction-image' width={600} height={600} className='object-cover' />
 
             </div>
         </div>
