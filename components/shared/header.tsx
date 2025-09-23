@@ -1,5 +1,4 @@
 import Image from "next/image";
-import logo from "@/assets/Logo2.svg";
 import Link from "next/link";
 import { Button } from "@mantine/core";
 import NavMenu from "../home/nav-menu";
@@ -12,7 +11,6 @@ import koboRideImage from "@/assets/images/koboRide.png";
 const navLinks = [
   {
     label: "Products",
-    href: "/",
     children: (
       <div className='grid grid-cols-3 gap-8 container mx-auto p-4 rounded-2xl rounded-b-2xl'>
         <Link
@@ -37,7 +35,7 @@ const navLinks = [
         </Link>
 
         <Link
-          href='/products'
+          href='#'
           className='rounded-xl border border-[#B0D0CE] flex flex-col relative h-[240px]'>
           <div className='p-5 flex flex-col gap-1'>
             <div className='flex gap-2 items-center'>
@@ -98,17 +96,17 @@ const navLinks = [
                   d='M55.8477 43.3892L65.4585 53L55.8477 62.6108'
                   stroke='#93A8A7'
                   strokeWidth='1.5'
-                  stroke-miterlimit='10'
-                  stroke-linecap='round'
-                  stroke-linejoin='round'
+                  strokeMiterlimit='10'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
                 />
                 <path
                   d='M38.5415 53H65.189'
                   stroke='#93A8A7'
                   strokeWidth='1.5'
-                  stroke-miterlimit='10'
-                  stroke-linecap='round'
-                  stroke-linejoin='round'
+                  strokeMiterlimit='10'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
                 />
               </svg>
             </Link>
@@ -193,14 +191,14 @@ const navLinks = [
 
 export default function Header({ textColor, logo }: { textColor: string, logo: React.ReactNode }) {
   return (
-    <>
-      <div className='hidden md:block z-50'>
+    <div className="z-20 bg-[#0A1B1B]">
+      <div className='hidden md:block'>
         <DesktopHeader textColor={textColor} logo={logo} />
       </div>
-      <div className='md:hidden z-50'>
-        <MobileHeader />
+      <div className='md:hidden'>
+        <MobileHeader logo={logo} />
       </div>
-    </>
+    </div>
   );
 }
 
@@ -240,10 +238,10 @@ function DesktopHeader({ textColor = "white", logo }: { textColor: string, logo:
   );
 }
 
-function MobileHeader() {
+function MobileHeader({ logo }: { logo: React.ReactNode }) {
   return (
     <header className='container mx-auto flex justify-between items-center py-5 px-4'>
-      <Image src={logo} alt='Logo' width={100} height={100} />
+      {logo}
 
       <Button
         variant='default'
