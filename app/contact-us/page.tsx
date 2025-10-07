@@ -51,7 +51,7 @@ function page() {
     return (
         <main>
             <Header textColor='black' backgroundColor='white' logo={<Image src={logo} alt='Logo' width={100} height={100} />} />
-            <div className='mt-4 mb-16'>
+            <div className='mb-16'>
                 <div className='h-[40vh] relative flex flex-col justify-center items-center px-4'>
                     <Image src={helpBg} priority alt='Help' className='absolute top-0 left-0 z-0' fill />
 

@@ -16,7 +16,7 @@ function page() {
   return <div>
     <Header textColor='black' backgroundColor='white' logo={<Image src={logo} alt='Logo' width={100} height={100} />} />
 
-    <div className="mt-4 mb-16 space-y-4 md:space-y-12 lg:space-y-24 px-4">
+    <div className="mb-16 space-y-4 md:space-y-12 lg:space-y-24 px-4">
       <div className="h-[40vh] flex flex-col justify-center items-center relative max-w-6xl mx-auto">
         <Image src={pressImage} alt='press' fill className="object-cover rounded-2xl" />
 

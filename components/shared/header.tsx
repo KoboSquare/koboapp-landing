@@ -209,6 +209,7 @@ function DesktopHeader({ textColor = "white", logo }: { textColor: string, logo:
 
   const pathName = usePathname()
 
+  // handle button variant based on current path
   const handleButtonVariant = useCallback((href: string) => {
     if (!href) {
       return "subtle"
@@ -222,7 +223,7 @@ function DesktopHeader({ textColor = "white", logo }: { textColor: string, logo:
   }, [pathName])
 
   return (
-    <header className='max-w-6xl mx-auto flex justify-between items-center py-5 px-4'>
+    <header className='max-w-6xl mx-auto flex justify-between items-center py-6 px-4'>
       <Link href="/">
         {logo}
       </Link>
