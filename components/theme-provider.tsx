@@ -12,7 +12,7 @@ const theme = createTheme({
 });
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-    return <MantineProvider theme={theme}>
+    return <MantineProvider theme={theme} forceColorScheme="light" >
         {children}
     </MantineProvider>;
 };

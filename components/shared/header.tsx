@@ -189,9 +189,9 @@ const navLinks = [
   { label: "Help", href: "/help" },
 ];
 
-export default function Header({ textColor, logo }: { textColor: string, logo: React.ReactNode }) {
+export default function Header({ textColor, backgroundColor = "#0A1B1B", logo }: { textColor: string, backgroundColor?: string, logo: React.ReactNode }) {
   return (
-    <div className="z-20 bg-[#0A1B1B]">
+    <div className="z-20" style={{ backgroundColor }}>
       <div className='hidden md:block'>
         <DesktopHeader textColor={textColor} logo={logo} />
       </div>
@@ -204,7 +204,7 @@ export default function Header({ textColor, logo }: { textColor: string, logo: R
 
 function DesktopHeader({ textColor = "white", logo }: { textColor: string, logo: React.ReactNode }) {
   return (
-    <header className='container mx-auto flex justify-between items-center py-5 px-4'>
+    <header className='max-w-6xl mx-auto flex justify-between items-center py-5 px-4'>
       <Link href="/">
         {logo}
       </Link>
