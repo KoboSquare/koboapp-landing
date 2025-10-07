@@ -17,7 +17,7 @@ export default function BuiltInAfrica() {
     <section className="relative">
       {/* Dark band */}
       <div className="bg-[#0A1B1B] text-white h-[690px] lg:h-[772px]">
-        <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-[90px] lg:pt-[107px]">
+        <div className="mx-auto max-w-6xl px-4 pt-[90px] lg:pt-[107px]">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
             {/* Left copy */}
             <div className="max-w-xl">
@@ -56,7 +56,7 @@ export default function BuiltInAfrica() {
       </div>
 
       {/* Overlapping video/image card */}
-      <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-6xl px-4">
         <div className="overflow-hidden rounded-xl sm:rounded-2xl shadow-lg -mt-16 lg:-mt-32">
           <Image
             src={CultureImage}

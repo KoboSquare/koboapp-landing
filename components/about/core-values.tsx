@@ -94,9 +94,8 @@ function ValueCard({
     <div className="flex flex-col lg:flex-row items-center">
       {/* Image */}
       <div
-        className={`w-full md:w-auto md:flex-shrink-0 ${
-          reverse ? "lg:order-2" : "lg:order-1"
-        } mb-6 md:mb-0`}
+        className={`w-full md:w-auto md:flex-shrink-0 ${reverse ? "lg:order-2" : "lg:order-1"
+          } mb-6 md:mb-0`}
       >
         <div className="relative rounded-xl overflow-hidden w-full md:w-[480px]">
           {/* green accent frame */}
@@ -115,9 +114,8 @@ function ValueCard({
 
       {/* Text */}
       <div
-        className={`w-4/5 lg:w-full m-auto flex-1 ${
-          reverse ? "lg:order-1" : "lg:order-2"
-        } ${getSpacingClass()}`}
+        className={`w-4/5 lg:w-full m-auto flex-1 ${reverse ? "lg:order-1" : "lg:order-2"
+          } ${getSpacingClass()}`}
       >
         <div className="w-full flex lg:block justify-center items-center mt-10 lg:mt-0">
           <Image
@@ -142,7 +140,7 @@ function ValueCard({
 
 export default function CoreValues() {
   return (
-    <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16 lg:py-16 max-w-7xl">
+    <section className="mx-auto px-4 py-10 md:py-16 lg:py-16 max-w-6xl">
       {/* Section header */}
       <div className="text-center max-w-2xl mx-auto mb-8 md:mb-16">
         <h2 className="text-2xl md:text-[40px] md:leading-[44px] font-semibold text-[#010101]">
@@ -171,9 +169,9 @@ export default function CoreValues() {
         </p>
 
         <div className="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-          {PEOPLE.map((p) => (
+          {PEOPLE.map((p, index) => (
             <div
-              key={p.name}
+              key={index}
               className="group relative overflow-hidden rounded-xl aspect-square cursor-pointer"
             >
               {/* Image */}
