@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
-import { Button, useMantineTheme } from "@mantine/core";
+import { Button } from "@mantine/core";
 import NavMenu from "../home/nav-menu";
 import vaultImage from "@/assets/images/koboVault.png";
 import aboutImage from "@/assets/images/aboutUs.png";
@@ -9,6 +9,7 @@ import careerImage from "@/assets/images/careers.png";
 import pressImage from "@/assets/images/press.png";
 import koboRideImage from "@/assets/images/koboRide.png";
 import { usePathname } from "next/navigation";
+import { useCallback } from "react";
 
 const navLinks = [
   {
@@ -119,12 +120,12 @@ const navLinks = [
   },
   {
     label: "Company",
-    href: "/about",
+    href: "/company",
     children: (
       <div className='grid grid-cols-2 gap-8 p-4'>
         <div>
           <Link
-            href='/about'
+            href='/company/about-us'
             className='rounded-xl border border-[#B0D0CE] flex flex-col relative h-[240px]'>
             <div className='p-5 flex flex-col gap-1'>
               <h2 className='font-bold'>About Us</h2>
@@ -147,7 +148,7 @@ const navLinks = [
 
         <div className='flex flex-col gap-2 h-full'>
           <Link
-            href='/careers'
+            href='/company/careers'
             className='h-[50%] rounded-xl bg-[#0A1B1B] border border-[#B0D0CE] relative'>
             <div className='p-5 flex flex-col gap-1'>
               <h2 className='font-bold text-white'>Careers</h2>
@@ -166,7 +167,7 @@ const navLinks = [
           </Link>
 
           <Link
-            href='/press'
+            href='/company/press'
             className='h-[50%] rounded-xl border border-[#B0D0CE] relative'>
             <div className='p-5 flex flex-col gap-1'>
               <h2 className='font-bold'>Press</h2>
@@ -208,7 +209,17 @@ function DesktopHeader({ textColor = "white", logo }: { textColor: string, logo:
 
   const pathName = usePathname()
 
-  const theme = useMantineTheme()
+  const handleButtonVariant = useCallback((href: string) => {
+    if (!href) {
+      return "subtle"
+    }
+
+    if (pathName.includes(href)) {
+      return "filled"
+    }
+
+    return "subtle"
+  }, [pathName])
 
   return (
     <header className='max-w-6xl mx-auto flex justify-between items-center py-5 px-4'>
@@ -219,14 +230,12 @@ function DesktopHeader({ textColor = "white", logo }: { textColor: string, logo:
       <div className='flex gap-5'>
         {navLinks.map((link) =>
           link.children ? (
-            <NavMenu key={link.label} label={link.label} color={textColor}>
-              {link.children}{" "}
+            <NavMenu key={link.label} label={link.label} color={textColor} buttonVariant={handleButtonVariant(link?.href as string)}>
+              {link.children}
             </NavMenu>
           ) : (
             <Link href={link.href} key={link.label}>
-              <Button variant={
-                pathName === link.href ? 'filled' : "subtle"
-              } color={
+              <Button variant={handleButtonVariant(link.href)} color={
                 textColor
               }>
                 {link.label}
