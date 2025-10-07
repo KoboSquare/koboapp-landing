@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 function SimplifyPaymentBanner() {
     return (
-        <div className=' py-10 md:py-14 px-4 container mx-auto'>
+        <div className=' py-10 md:py-14 px-4 max-w-6xl mx-auto'>
             <div className='bg-[#0A1B1B] grid grid-cols-1 md:grid-cols-3 rounded-2xl pt-6'>
                 <div className='col-span-1 relative min-h-[300px]'>
                     <Image src={OurAppImage} alt='kobovault-app' fill className='absolute bottom-0 object-full' />

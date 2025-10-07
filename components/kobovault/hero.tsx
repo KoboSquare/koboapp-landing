@@ -14,7 +14,7 @@ export default function Hero() {
                 fill
                 className='object-cover absolute inset-0 z-0'
             />
-            <div className='container mx-auto grid grid-cols-1 md:grid-cols-3 py-4 md:py-6 px-4 relative z-10'>
+            <div className='max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 py-4 md:py-6 px-4 relative z-10'>
 
                 <div className='col-span-2 max-w-2xl  py-10 text-white'>
                     <div>

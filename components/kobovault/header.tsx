@@ -39,7 +39,7 @@ function DesktopHeader() {
     const pathName = usePathname()
 
     return (
-        <header className='container mx-auto flex justify-between items-center py-5 px-4'>
+        <header className='max-w-6xl mx-auto flex justify-between items-center py-6 px-4'>
             <Link href="/">
                 <Image src={logo} className='z-50' alt='Logo' width={100} height={100} />
             </Link>

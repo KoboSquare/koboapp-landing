@@ -20,7 +20,7 @@ function MoreBenefits() {
     ]
 
     return (
-        <div className='container mx-auto py-6 md:py-8 px-4 max-w-6xl'>
+        <div className=' mx-auto py-6 md:py-8 px-4 max-w-6xl'>
             <div className='flex flex-col md:flex-row justify-between items-center py-6 md:py-8'>
                 <h1 className='text-2xl md:text-4xl font-semibold leading-[1.25] max-w-sm mb-2'>More Benefits From Kobo Vault</h1>
                 <p className='text-base font-medium max-w-lg text-center md:text-left'>

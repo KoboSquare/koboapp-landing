@@ -4,7 +4,7 @@ import totalControlImage from '@/assets/images/totalControlImage.png'
 
 function TotalControl() {
     return (
-        <div className='container max-w-6xl mx-auto py-6 md:py-10 px-4 flex flex-col md:flex-row gap-8 md:gap-16 items-end'>
+        <div className='max-w-6xl mx-auto py-6 md:py-10 px-4 flex flex-col md:flex-row gap-8 md:gap-16 items-end'>
             <div className='relative'>
                 <Image src={totalControlImage} alt='total-control' width={400} height={400} priority className='object-cover' />
             </div>

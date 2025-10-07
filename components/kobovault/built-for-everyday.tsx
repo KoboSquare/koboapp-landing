@@ -5,7 +5,7 @@ import transactionCard from '@/assets/images/transactionCard.png'
 
 function BuiltForEveryday() {
     return (
-        <div className='container max-w-6xl mx-auto py-6 md:py-10 px-4 flex flex-col md:flex-row gap-8 md:gap-20 items-center'>
+        <div className='max-w-6xl mx-auto py-6 md:py-10 px-4 flex flex-col md:flex-row gap-8 md:gap-20 items-center'>
 
             <div className='relative'>
                 <Image src={MapSvg} alt='map-svg' width={600} height={600} className='object-cover' />
