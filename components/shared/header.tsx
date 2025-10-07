@@ -1,12 +1,14 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@mantine/core";
+import { Button, useMantineTheme } from "@mantine/core";
 import NavMenu from "../home/nav-menu";
 import vaultImage from "@/assets/images/koboVault.png";
 import aboutImage from "@/assets/images/aboutUs.png";
 import careerImage from "@/assets/images/careers.png";
 import pressImage from "@/assets/images/press.png";
 import koboRideImage from "@/assets/images/koboRide.png";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   {
@@ -185,7 +187,7 @@ const navLinks = [
       </div>
     ),
   },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Contact Us", href: "/contact-us" },
   { label: "Help", href: "/help" },
 ];
 
@@ -203,6 +205,11 @@ export default function Header({ textColor, backgroundColor = "#0A1B1B", logo }:
 }
 
 function DesktopHeader({ textColor = "white", logo }: { textColor: string, logo: React.ReactNode }) {
+
+  const pathName = usePathname()
+
+  const theme = useMantineTheme()
+
   return (
     <header className='max-w-6xl mx-auto flex justify-between items-center py-5 px-4'>
       <Link href="/">
@@ -217,7 +224,11 @@ function DesktopHeader({ textColor = "white", logo }: { textColor: string, logo:
             </NavMenu>
           ) : (
             <Link href={link.href} key={link.label}>
-              <Button variant='subtle' color={textColor}>
+              <Button variant={
+                pathName === link.href ? 'filled' : "subtle"
+              } color={
+                textColor
+              }>
                 {link.label}
               </Button>
             </Link>
