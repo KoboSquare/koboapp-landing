@@ -4,3 +4,4 @@ export * from "./categories";
 export * from "./pages";
 export * from "./press";
 export * from "./careers";
+export * from "./about";

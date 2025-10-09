@@ -1,8 +1,8 @@
-"use client"
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@mantine/core";
-import NavMenu from "../home/nav-menu";
+import NavMenu from "@/components/ui/NavMenu";
 import vaultImage from "@/assets/images/koboVault.png";
 import aboutImage from "@/assets/images/aboutUs.png";
 import careerImage from "@/assets/images/careers.png";
@@ -192,9 +192,17 @@ const navLinks = [
   { label: "Help", href: "/help" },
 ];
 
-export default function Header({ textColor, backgroundColor = "#0A1B1B", logo }: { textColor: string, backgroundColor?: string, logo: React.ReactNode }) {
+export default function Header({
+  textColor,
+  backgroundColor = "#0A1B1B",
+  logo,
+}: {
+  textColor: string;
+  backgroundColor?: string;
+  logo: React.ReactNode;
+}) {
   return (
-    <div className="z-20" style={{ backgroundColor }}>
+    <div className='z-20' style={{ backgroundColor }}>
       <div className='hidden md:block'>
         <DesktopHeader textColor={textColor} logo={logo} />
       </div>
@@ -205,40 +213,50 @@ export default function Header({ textColor, backgroundColor = "#0A1B1B", logo }:
   );
 }
 
-function DesktopHeader({ textColor = "white", logo }: { textColor: string, logo: React.ReactNode }) {
-
-  const pathName = usePathname()
+function DesktopHeader({
+  textColor = "white",
+  logo,
+}: {
+  textColor: string;
+  logo: React.ReactNode;
+}) {
+  const pathName = usePathname();
 
   // handle button variant based on current path
-  const handleButtonVariant = useCallback((href: string) => {
-    if (!href) {
-      return "subtle"
-    }
+  const handleButtonVariant = useCallback(
+    (href: string) => {
+      if (!href) {
+        return "subtle";
+      }
 
-    if (pathName.includes(href)) {
-      return "filled"
-    }
+      if (pathName.includes(href)) {
+        return "filled";
+      }
 
-    return "subtle"
-  }, [pathName])
+      return "subtle";
+    },
+    [pathName]
+  );
 
   return (
     <header className='max-w-6xl mx-auto flex justify-between items-center py-6 px-4'>
-      <Link href="/">
-        {logo}
-      </Link>
+      <Link href='/'>{logo}</Link>
 
       <div className='flex gap-5'>
         {navLinks.map((link) =>
           link.children ? (
-            <NavMenu key={link.label} label={link.label} color={textColor} buttonVariant={handleButtonVariant(link?.href as string)}>
+            <NavMenu
+              key={link.label}
+              label={link.label}
+              color={textColor}
+              buttonVariant={handleButtonVariant(link?.href as string)}>
               {link.children}
             </NavMenu>
           ) : (
             <Link href={link.href} key={link.label}>
-              <Button variant={handleButtonVariant(link.href)} color={
-                textColor
-              }>
+              <Button
+                variant={handleButtonVariant(link.href)}
+                color={textColor}>
                 {link.label}
               </Button>
             </Link>

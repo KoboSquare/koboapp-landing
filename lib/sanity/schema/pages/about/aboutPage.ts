@@ -39,11 +39,148 @@ export default defineType({
           title: "Hero Subtitle",
           type: "text",
           rows: 3,
-          validation: (Rule) => Rule.required(),
         },
         {
           name: "backgroundImage",
           title: "Background Image",
+          type: "image",
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: "alt",
+              type: "string",
+              title: "Alternative Text",
+              validation: (Rule) => Rule.required(),
+            },
+          ],
+          validation: (Rule) => Rule.required(),
+        },
+      ],
+    },
+    {
+      name: "whatIsKoboSection",
+      title: "What is Kobo Connect Section",
+      type: "object",
+      fields: [
+        {
+          name: "title",
+          title: "Section Title",
+          type: "string",
+          initialValue: "What is Kobo Connect?",
+        },
+        {
+          name: "subtitle",
+          title: "Section Subtitle",
+          type: "string",
+          initialValue: "Africa's next-generation super app.",
+        },
+        {
+          name: "description",
+          title: "Description",
+          type: "text",
+          rows: 5,
+        },
+        {
+          name: "stats",
+          title: "Statistics",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              fields: [
+                {
+                  name: "value",
+                  title: "Statistic Value",
+                  type: "string",
+                  validation: (Rule) => Rule.required(),
+                },
+                {
+                  name: "label",
+                  title: "Statistic Label",
+                  type: "string",
+                  validation: (Rule) => Rule.required(),
+                },
+              ],
+              preview: {
+                select: {
+                  title: "value",
+                  subtitle: "label",
+                },
+              },
+            },
+          ],
+          validation: (Rule) => Rule.min(3).max(3),
+        },
+        {
+          name: "phoneImage",
+          title: "Phone Image",
+          type: "image",
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: "alt",
+              type: "string",
+              title: "Alternative Text",
+              validation: (Rule) => Rule.required(),
+            },
+          ],
+          validation: (Rule) => Rule.required(),
+        },
+      ],
+    },
+    {
+      name: "builtInAfricaSection",
+      title: "Built in Africa Section",
+      type: "object",
+      fields: [
+        {
+          name: "title",
+          title: "Section Title",
+          type: "string",
+          initialValue: "Built In Africa For Africans.",
+        },
+        {
+          name: "description",
+          title: "Description",
+          type: "text",
+          rows: 4,
+        },
+        {
+          name: "features",
+          title: "Features List",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              fields: [
+                {
+                  name: "text",
+                  title: "Feature Text",
+                  type: "string",
+                  validation: (Rule) => Rule.required(),
+                },
+                {
+                  name: "href",
+                  title: "Link (optional)",
+                  type: "url",
+                },
+              ],
+              preview: {
+                select: {
+                  title: "text",
+                },
+              },
+            },
+          ],
+          validation: (Rule) => Rule.min(1).max(6),
+        },
+        {
+          name: "cultureImage",
+          title: "Culture Image",
           type: "image",
           options: {
             hotspot: true,
@@ -131,6 +268,23 @@ export default defineType({
                   validation: (Rule) => Rule.required(),
                 },
                 {
+                  name: "image",
+                  title: "Value Image",
+                  type: "image",
+                  options: {
+                    hotspot: true,
+                  },
+                  fields: [
+                    {
+                      name: "alt",
+                      type: "string",
+                      title: "Alternative Text",
+                      validation: (Rule) => Rule.required(),
+                    },
+                  ],
+                  validation: (Rule) => Rule.required(),
+                },
+                {
                   name: "icon",
                   title: "Value Icon",
                   type: "image",
@@ -142,8 +296,10 @@ export default defineType({
                       name: "alt",
                       type: "string",
                       title: "Alternative Text",
+                      validation: (Rule) => Rule.required(),
                     },
                   ],
+                  validation: (Rule) => Rule.required(),
                 },
               ],
               preview: {
@@ -179,6 +335,71 @@ export default defineType({
           title: "Show Team Section",
           type: "boolean",
           initialValue: true,
+        },
+        {
+          name: "teamMembers",
+          title: "Team Members",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              fields: [
+                {
+                  name: "name",
+                  title: "Member Name",
+                  type: "string",
+                  validation: (Rule) => Rule.required(),
+                },
+                {
+                  name: "role",
+                  title: "Member Role",
+                  type: "string",
+                  validation: (Rule) => Rule.required(),
+                },
+                {
+                  name: "image",
+                  title: "Member Photo",
+                  type: "image",
+                  options: {
+                    hotspot: true,
+                  },
+                  fields: [
+                    {
+                      name: "alt",
+                      type: "string",
+                      title: "Alternative Text",
+                      validation: (Rule) => Rule.required(),
+                    },
+                  ],
+                  validation: (Rule) => Rule.required(),
+                },
+                {
+                  name: "bio",
+                  title: "Member Bio",
+                  type: "text",
+                  rows: 3,
+                },
+                {
+                  name: "linkedin",
+                  title: "LinkedIn URL",
+                  type: "url",
+                },
+                {
+                  name: "twitter",
+                  title: "Twitter URL",
+                  type: "url",
+                },
+              ],
+              preview: {
+                select: {
+                  title: "name",
+                  subtitle: "role",
+                  media: "image",
+                },
+              },
+            },
+          ],
+          validation: (Rule) => Rule.min(1).max(12),
         },
       ],
     },
