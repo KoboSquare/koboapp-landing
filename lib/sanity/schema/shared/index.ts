@@ -1,7 +1,5 @@
-import article from './article'
-import category from './category'
+import article from "./article";
+import category from "./category";
+import jobPosition from "./jobPosition";
 
-export const sharedSchemas = [
-  article,
-  category,
-]
+export const sharedSchemas = [article, category, jobPosition];

@@ -135,25 +135,54 @@ export default defineType({
           type: "string",
         },
         {
+          name: "subtitle",
+          title: "Section Subtitle",
+          type: "text",
+          rows: 2,
+        },
+        {
           name: "description",
           title: "Culture Description",
           type: "text",
           rows: 4,
         },
         {
-          name: "image",
-          title: "Culture Image",
-          type: "image",
-          options: {
-            hotspot: true,
-          },
-          fields: [
+          name: "cultureImages",
+          title: "Culture Images",
+          type: "array",
+          description:
+            "Images to display in the culture section (up to 7 images recommended)",
+          of: [
             {
-              name: "alt",
-              type: "string",
-              title: "Alternative Text",
+              type: "image",
+              options: {
+                hotspot: true,
+              },
+              fields: [
+                {
+                  name: "alt",
+                  type: "string",
+                  title: "Alternative Text",
+                  validation: (Rule) => Rule.required(),
+                },
+                {
+                  name: "caption",
+                  type: "string",
+                  title: "Caption (optional)",
+                },
+              ],
+              preview: {
+                select: {
+                  title: "alt",
+                  media: "asset",
+                },
+              },
             },
           ],
+          validation: (Rule) => Rule.max(7).min(1),
+          options: {
+            layout: "grid",
+          },
         },
       ],
     },

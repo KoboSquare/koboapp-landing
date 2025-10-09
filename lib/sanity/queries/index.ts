@@ -3,3 +3,4 @@ export * from "./articles";
 export * from "./categories";
 export * from "./pages";
 export * from "./press";
+export * from "./careers";

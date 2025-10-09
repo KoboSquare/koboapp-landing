@@ -115,16 +115,3 @@ export const ABOUT_PAGE_QUERY = defineQuery(`
     seo
   }
 `);
-
-export const CAREERS_PAGE_QUERY = defineQuery(`
-  *[_type == "careersPage"][0] {
-    _id,
-    title,
-    slug,
-    heroSection,
-    benefitsSection,
-    cultureSection,
-    openPositionsSection,
-    seo
-  }
-`);
