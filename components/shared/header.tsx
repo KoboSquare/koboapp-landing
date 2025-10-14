@@ -5,7 +5,7 @@ import { Button } from "@mantine/core";
 import NavMenu from "@/components/ui/NavMenu";
 import vaultImage from "@/assets/images/koboVault.png";
 import aboutImage from "@/assets/images/aboutUs.png";
-import careerImage from "@/assets/images/careers.png";
+// import careerImage from "@/assets/images/careers.png";
 import pressImage from "@/assets/images/press.png";
 import koboRideImage from "@/assets/images/koboRide.png";
 import { usePathname } from "next/navigation";
@@ -156,13 +156,13 @@ const navLinks = [
             </div>
 
             <div className='bg-[#203C3A] rounded-t-xl absolute bottom-0 right-0'>
-              <Image
+              {/* <Image
                 className='mt-2 mr-2 rounded-t-xl'
                 src={careerImage}
                 alt='career'
                 width={140}
                 height={140}
-              />
+              /> */}
             </div>
           </Link>
 
