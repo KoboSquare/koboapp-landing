@@ -15,7 +15,6 @@ async function AboutPage() {
   // Fetch about page data from Sanity
   const aboutPageData = await client.fetch(ABOUT_PAGE_DATA_QUERY);
 
-  console.log(aboutPageData, "aboutPageData");
   return (
     <main>
       <Header

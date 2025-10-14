@@ -1,5 +1,4 @@
 import React from "react";
-import icon from "@/assets/images/icon.png";
 import Image from "next/image";
 
 interface Benefit {
@@ -34,40 +33,6 @@ interface WorkBenefitsProps {
   careersPageData: CareersPageData;
 }
 
-// Fallback data when Sanity doesn't have benefits data
-const fallbackBenefits = [
-  {
-    title: "Work From Anywhere",
-    icon: icon,
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  },
-  {
-    title: "Lorem ipsum",
-    icon: icon,
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  },
-  {
-    title: "Lorem ips",
-    icon: icon,
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  },
-  {
-    title: "Lorem ipsu",
-    icon: icon,
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  },
-  {
-    title: "Work From Anywher",
-    icon: icon,
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  },
-  {
-    title: "Lorem ipsm",
-    icon: icon,
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  },
-];
-
 function WorkBenefits({ careersPageData }: WorkBenefitsProps) {
   const { benefitsSection } = careersPageData;
 
@@ -79,7 +44,7 @@ function WorkBenefits({ careersPageData }: WorkBenefitsProps) {
           description: benefit.description,
           icon: benefit.icon.asset.url,
         }))
-      : fallbackBenefits;
+      : [];
   return (
     <div className='max-w-6xl mx-auto'>
       {benefitsSection.title && (
