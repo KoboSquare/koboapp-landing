@@ -1,77 +1,11 @@
 import Image from "next/image";
 import React from "react";
-import v1 from "@/assets/images/values-1.jpg";
-import v2 from "@/assets/images/values-2.jpg";
-import v3 from "@/assets/images/values-3.jpg";
-import v4 from "@/assets/images/values-4.jpg";
-import p1 from "@/assets/images/team-1.jpg";
-import p2 from "@/assets/images/team-2.jpg";
-import p3 from "@/assets/images/team-3.jpg";
-import p4 from "@/assets/images/team-4.jpg";
-import p5 from "@/assets/images/team-5.jpg";
-import p6 from "@/assets/images/team-6.jpg";
-import p7 from "@/assets/images/team-7.jpg";
-import p8 from "@/assets/images/team-8.jpg";
-import i1 from "@/assets/icons/icon-1.svg";
-import i2 from "@/assets/icons/icon-2.svg";
-import i3 from "@/assets/icons/icon-3.svg";
-import i4 from "@/assets/icons/icon-4.svg";
-
-type FallbackValue = {
-  id: number;
-  title: string;
-  body: string;
-  image: any;
-  icon: any;
-};
-
-const VALUES: FallbackValue[] = [
-  {
-    id: 1,
-    title: "Inclusion for Every African, | Everywhere",
-    body: "We believe access to essential digital services should never be limited | by geography, infrastructure, or income. Kobo Connect is designed | for everyone from smartphone users in urban centers to underbanked | individuals in remote areas, thanks to tools like USSD, agent networks, | and culturally relevant design.",
-    image: v1,
-    icon: i1,
-  },
-  {
-    id: 2,
-    title: "Seamless Simplicity for | Everyday Life",
-    body: "Life is complicated, your digital experience shouldn't be. Kobo unifies | fragmented services into one seamless platform, removing the need to | juggle multiple apps. From rides to payments, everything is just a tap | away.",
-    image: v2,
-    icon: i2,
-  },
-  {
-    id: 3,
-    title: "Built for Africa, | Rooted in Local Realities",
-    body: "We're deeply rooted in African realities. Whether it's integrating local | transport like keke and okada, enabling cash-on-delivery, or translating | services into local languages, Kobo Connect meets people where they | are, and how they live.",
-    image: v3,
-    icon: i3,
-  },
-  {
-    id: 4,
-    title: "Empowering Users, Businesses, | and Communities",
-    body: "Kobo Connect isn't just about access, it's about impact. We empower | users to shop, earn, move, communicate, and care for their health. | We enable small businesses and service providers to grow, and we drive | digital adoption through tools that work for everyone.",
-    image: v4,
-    icon: i4,
-  },
-];
-
-const PEOPLE = [
-  { img: p1, name: "Lucky Ekezie", role: "EngineeFounder, CEO" },
-  { img: p2, name: "Lucky Ekezie", role: "EngineeFounder, CEO" },
-  { img: p3, name: "Lucky Ekezie", role: "EngineeFounder, CEO" },
-  { img: p4, name: "Lucky Ekezie", role: "EngineeFounder, CEO" },
-  { img: p5, name: "Lucky Ekezie", role: "EngineeFounder, CEO" },
-  { img: p6, name: "Lucky Ekezie", role: "EngineeFounder, CEO" },
-  { img: p7, name: "Lucky Ekezie", role: "EngineeFounder, CEO" },
-  { img: p8, name: "Lucky Ekezie", role: "EngineeFounder, CEO" },
-];
 
 function ValueCard({
   value,
   reverse = false,
 }: {
-  value: Value | FallbackValue;
+  value: Value;
   reverse?: boolean;
 }) {
   function formatWithLineBreaks(text: string) {
@@ -92,7 +26,7 @@ function ValueCard({
   };
 
   return (
-    <div className='flex flex-col lg:flex-row items-center gap-4 lg:gap-x-8'>
+    <div className='flex flex-col lg:flex-row items-center gap-4 lg:gap-x-12'>
       {/* Image */}
       <div
         className={`w-full md:w-auto md:flex-shrink-0 ${
@@ -154,9 +88,7 @@ function ValueCard({
           {formatWithLineBreaks(value.title)}
         </h3>
         <p className='text-[#363E3F] leading-7 text-sm md:text-base font-normal'>
-          {formatWithLineBreaks(
-            "body" in value ? value.body : value.description
-          )}
+          {formatWithLineBreaks(value.description)}
         </p>
       </div>
     </div>
@@ -254,12 +186,11 @@ export default function CoreValues({ aboutPageData }: CoreValuesProps) {
 
       {/* Values list */}
       <div className='space-y-10 md:space-y-20 lg:space-y-24'>
-        {(valuesSection.values && valuesSection.values.length > 0
-          ? valuesSection.values
-          : VALUES
-        ).map((val, i) => (
-          <ValueCard key={val.title} value={val} reverse={i % 2 === 1} />
-        ))}
+        {valuesSection.values && valuesSection.values.length > 0
+          ? valuesSection.values.map((val, i) => (
+              <ValueCard key={val.title} value={val} reverse={i % 2 === 1} />
+            ))
+          : null}
       </div>
     </section>
   );
