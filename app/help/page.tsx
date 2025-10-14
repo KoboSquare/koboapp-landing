@@ -5,7 +5,7 @@ import Footer from "@/components/shared/footer";
 import { client } from "@/lib/sanity/client";
 import { HELP_PAGE_QUERY } from "@/lib/sanity/queries/help";
 import Hero from "@/components/help/Hero";
-import CustomAccordion from "@/components/help/Accordion";
+import CustomAccordion from "@/components/Accordion";
 
 async function page() {
   // Fetch help page data from Sanity
