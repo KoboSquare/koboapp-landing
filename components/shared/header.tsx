@@ -214,7 +214,7 @@ export default function Header({
 }
 
 function DesktopHeader({
-  textColor = "white",
+  textColor = "#CCE5DF",
   logo,
 }: {
   textColor: string;
@@ -242,19 +242,24 @@ function DesktopHeader({
     <header className='max-w-6xl mx-auto flex justify-between items-center py-6 px-4'>
       <Link href='/'>{logo}</Link>
 
-      <div className='flex gap-5'>
+      <div className='flex gap-4'>
         {navLinks.map((link) =>
           link.children ? (
             <NavMenu
               key={link.label}
-              label={link.label}
+              link={link}
               color={textColor}
-              buttonVariant={handleButtonVariant(link?.href as string)}>
-              {link.children}
-            </NavMenu>
+              buttonOptions={{
+                variant: handleButtonVariant(link?.href as string),
+              }}
+            />
           ) : (
             <Link href={link.href} key={link.label}>
               <Button
+                style={{
+                  backgroundColor: link.href === pathName ? "#122A2A" : "",
+                  color: link.href === pathName ? "#00BA8B" : textColor,
+                }}
                 variant={handleButtonVariant(link.href)}
                 color={textColor}>
                 {link.label}
@@ -266,9 +271,12 @@ function DesktopHeader({
 
       <Button
         variant='default'
+        radius={"md"}
+        size='md'
         style={{
-          backgroundColor: "#009A74",
-          color: "white",
+          backgroundColor: "#008E6A",
+          color: "#FFFFFF",
+          fontSize: "14px",
           borderColor: "#008E6A",
         }}>
         Get Started
