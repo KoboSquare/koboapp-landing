@@ -15,7 +15,10 @@ import Footer from "@/components/shared/footer";
 export default function Home() {
   return (
     <main>
-      <Header textColor='white' logo={<Image src={logo} alt='Logo' width={100} height={100} />} />
+      <Header
+        textColor='#CCE5DF'
+        logo={<Image src={logo} alt='Logo' priority width={100} height={100} />}
+      />
       <Hero />
       <KoboConnect />
       <Solution />

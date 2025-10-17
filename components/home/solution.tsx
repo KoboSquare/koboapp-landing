@@ -65,7 +65,7 @@ function Solution() {
               />
             </svg>
 
-            <h3 className='text-xl font-semibold'>{solution.title}</h3>
+            <h3 className='text-lg font-semibold'>{solution.title}</h3>
             <p className='text-base font-[400]'>{solution.description}</p>
           </div>
         ))}

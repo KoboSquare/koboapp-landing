@@ -4,10 +4,11 @@ import appStoreSvg from "@/assets/appStore.svg";
 import playStoreSvg from "@/assets/playStore.svg";
 import TypewriterText from "../shared/typewriter-text";
 import heroBg from "@/assets/images/heroBg.png";
+import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="relative h-[75dvh]">
+    <div className='relative h-[75dvh]'>
       <Image
         src={heroBg}
         priority
@@ -46,30 +47,44 @@ export default function Hero() {
               </span>
             </h1>
 
-            <p className='my-6 text-sm md:text-base'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-              vehicula ac ex ac vehicula. Vestibulum finibus ante sit amet
-              cursus tempus.
+            <p className='text-[#B5BBBB] my-6 text-base md:text-[22px] leading-loose md:leading-[40px]'>
+              Kobo Connect combines payments, transport, chat, food, shopping,
+              and healthcare into a single seamless platform built for modern
+              living. It’s not just an app, it’s your daily companion.
             </p>
           </div>
 
           <div className='flex gap-5 pt-4'>
-            <Image src={appStoreSvg} priority alt='app-store' width={150} height={150} />
-            <Image
-              src={playStoreSvg}
-              alt='play-store'
-              width={150}
-              height={150}
-              priority
-
-            />
+            <Link href='#'>
+              <Image
+                src={appStoreSvg}
+                priority
+                alt='app-store'
+                width={150}
+                height={150}
+              />
+            </Link>
+            <Link href='#'>
+              <Image
+                src={playStoreSvg}
+                alt='play-store'
+                width={150}
+                height={150}
+                priority
+              />
+            </Link>
           </div>
         </div>
         <div className='col-span-1 min-h-[500px]'>
-          <Image src={heroImg} alt='hero-img' width={500} height={500} priority />
+          <Image
+            src={heroImg}
+            alt='hero-img'
+            width={500}
+            height={500}
+            priority
+          />
         </div>
       </div>
     </div>
-
   );
 }

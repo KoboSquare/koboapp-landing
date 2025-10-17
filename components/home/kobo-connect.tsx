@@ -26,12 +26,12 @@ const contactInfo = [
 export default function KoboConnect() {
   return (
     <div>
-      <div className='container mx-auto py-10 md:py-20 px-4 max-w-6xl'>
+      <div className=' mx-auto py-10 md:py-20 px-4 max-w-6xl'>
         <div>
           <h2 className='text-[#009A74] font-medium text-xl mb-2'>
             What is Kobo Connect?
           </h2>
-          <h1 className='text-2xl font-bold leading-[1.25]'>
+          <h1 className='text-2xl lg:text-3xl font-semibold leading-[1.25]'>
             Africa’s next-generation super app <br />
             All in one integrated digital platform
           </h1>
@@ -70,7 +70,7 @@ export default function KoboConnect() {
 
             <div className='grid grid-cols-3 gap-4 mt-6'>
               {contactInfo.map((item, index) => (
-                <div key={index} className='bg-[#FAFDFE] p-4 rounded-lg'>
+                <div key={index} className='bg-[#FAFDFE] p-4 rounded-lg w-full'>
                   <Image
                     src={item.icon}
                     alt={item.title}
@@ -78,7 +78,11 @@ export default function KoboConnect() {
                     height={24}
                     className='mb-4'
                   />
-                  <p className='text-base font-[400]'>{item.value}</p>
+                  <div className=''>
+                    <p className='text-base font-[400] break-words whitespace-normal max-w-full'>
+                      {item.value}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
