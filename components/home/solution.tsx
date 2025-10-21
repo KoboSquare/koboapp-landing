@@ -1,37 +1,45 @@
 import React from "react";
+import { HomePageData } from "@/lib/sanity/queries/home";
 
-function Solution() {
-  const solutions = [
-    {
-      title: "No More App-Hopping",
-      description:
-        "To combat fragmented service access, eliminating the hassle of juggling numerous apps",
-    },
+interface SolutionProps {
+  data?: HomePageData["solutionSection"];
+}
 
-    {
-      title: "Reimagining Access to Money",
-      description:
-        "To provide accessible financial tools including mobile wallets and peer to peer transfer all built to function with or without traditional banking infrastructure.",
-    },
-    {
-      title: "One Digital Flow",
-      description: `To bridge the gap caused by inconsistent digital ecosystems and ensure smooth running between users, local businesses, and service providers.`,
-    },
-  ];
+function Solution({ data }: SolutionProps) {
+  // Fallback data if no Sanity data is provided
+  const solutionData = data || {
+    title: "Here is our Solution",
+    subtitle:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget leo ac eros facilisis finibus scelerisque sit amet turpis.",
+    solutions: [
+      {
+        title: "No More App-Hopping",
+        description:
+          "To combat fragmented service access, eliminating the hassle of juggling numerous apps",
+      },
+      {
+        title: "Reimagining Access to Money",
+        description:
+          "To provide accessible financial tools including mobile wallets and peer to peer transfer all built to function with or without traditional banking infrastructure.",
+      },
+      {
+        title: "One Digital Flow",
+        description:
+          "To bridge the gap caused by inconsistent digital ecosystems and ensure smooth running between users, local businesses, and service providers.",
+      },
+    ],
+  };
 
   return (
     <div className='container mx-auto py-6 md:py-12 px-4 max-w-6xl'>
       <div className='text-center mb-10 max-w-2xl mx-auto'>
         <h2 className='text-[#010101] font-semibold text-4xl mb-2'>
-          Here is our Solution
+          {solutionData.title}
         </h2>
-        <p className='text-base font-medium'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget
-          leo ac eros facilisis finibus scelerisque sit amet turpis.
-        </p>
+        <p className='text-base font-medium'>{solutionData.subtitle}</p>
       </div>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-x-8 lg:gap-x-16'>
-        {solutions.map((solution) => (
+        {solutionData.solutions.map((solution) => (
           <div
             key={solution.title}
             className='bg-[#FAFDFE] p-4 rounded-lg space-y-4'>

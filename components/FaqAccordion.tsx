@@ -1,5 +1,5 @@
-"use client";
-import { Accordion } from "@mantine/core";
+import { getFAQData } from "@/lib/sanity/queries/faq";
+import CustomAccordion from "./ui/Accordion";
 
 interface FAQItem {
   _id: string;
@@ -9,15 +9,14 @@ interface FAQItem {
   published: boolean;
 }
 
-interface CustomAccordionProps {
-  faqs: FAQItem[];
-}
+async function FAQAccordion() {
+  const faqs = await getFAQData();
 
-function CustomAccordion({ faqs }: CustomAccordionProps) {
+  console.log(faqs, "faqs");
+
   // Filter out unpublished FAQs and sort by order
-  const publishedFAQs = faqs
-    .filter((faq) => faq.published)
-    .sort((a, b) => a.order - b.order);
+  // const publishedFAQs = faqs?.filter((faq) => faq.published)
+  //   .sort((a, b) => a.order - b.order);
 
   // Fallback data if no FAQs are provided
   const fallbackFAQs = [
@@ -55,24 +54,9 @@ function CustomAccordion({ faqs }: CustomAccordionProps) {
     },
   ];
 
-  const faqItems = publishedFAQs.length > 0 ? publishedFAQs : fallbackFAQs;
+  // const faqItems = publishedFAQs.length > 0 ? publishedFAQs : fallbackFAQs;
 
-  return (
-    <div>
-      <Accordion>
-        {faqItems.map((item) => (
-          <Accordion.Item key={item._id} value={item._id}>
-            <Accordion.Control className='text-left'>
-              {item.question}
-            </Accordion.Control>
-            <Accordion.Panel className='text-[#363E3F]'>
-              <p className='mb-2'>{item.answer}</p>
-            </Accordion.Panel>
-          </Accordion.Item>
-        ))}
-      </Accordion>
-    </div>
-  );
+  return <div>{/* <CustomAccordion items={faqItems} /> */}</div>;
 }
 
-export default CustomAccordion;
+export default FAQAccordion;

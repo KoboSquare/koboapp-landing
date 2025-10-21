@@ -5,7 +5,7 @@ import Footer from "@/components/shared/footer";
 import { client } from "@/lib/sanity/client";
 import { HELP_PAGE_QUERY } from "@/lib/sanity/queries/help";
 import Hero from "@/components/help/Hero";
-import CustomAccordion from "@/components/Accordion";
+import FAQAccordion from "@/components/FaqAccordion";
 
 async function page() {
   // Fetch help page data from Sanity
@@ -24,7 +24,7 @@ async function page() {
 
         <div className='mt-4 mb-16 lg:mb-24 max-w-2xl mx-auto px-4'>
           {/* FAQ Section */}
-          <CustomAccordion faqs={helpPageData?.faqs || []} />
+          <FAQAccordion />
         </div>
       </div>
 

@@ -5,14 +5,45 @@ import playStoreSvg from "@/assets/playStore.svg";
 import TypewriterText from "../shared/typewriter-text";
 import heroBg from "@/assets/images/heroBg.png";
 import Link from "next/link";
+import { HomePageData } from "@/lib/sanity/queries/home";
 
-export default function Hero() {
+interface HeroProps {
+  data?: HomePageData["heroSection"];
+}
+
+export default function Hero({ data }: HeroProps) {
+  // Fallback data if no Sanity data is provided
+  const heroData = data || {
+    backgroundImage: {
+      asset: {
+        url: heroBg.src,
+        _id: "",
+        metadata: { dimensions: { width: 0, height: 0 } },
+      },
+      alt: "Hero background",
+    },
+    mainTitle: "Experience",
+    typewriterWords: ["Banking", "Shopping", "Sending Money"],
+    appName: "Kobo App",
+    description:
+      "Kobo Connect combines payments, transport, chat, food, shopping, and healthcare into a single seamless platform built for modern living. It's not just an app, it's your daily companion.",
+    heroImage: {
+      asset: {
+        url: heroImg.src,
+        _id: "",
+        metadata: { dimensions: { width: 0, height: 0 } },
+      },
+      alt: "Hero image",
+    },
+    appStoreLink: "#",
+    playStoreLink: "#",
+  };
   return (
     <div className='relative h-[75dvh]'>
       <Image
-        src={heroBg}
+        src={heroData.backgroundImage.asset.url}
         priority
-        alt='hero-bg'
+        alt={heroData.backgroundImage.alt}
         fill
         className='object-cover absolute inset-0 z-0'
       />
@@ -20,18 +51,16 @@ export default function Hero() {
         <div className='col-span-2 max-w-2xl  py-10 text-white'>
           <div>
             <h1 className='text-2xl md:text-5xl font-bold leading-[1.25]'>
-              Experience {""}
+              {heroData.mainTitle} {""}
               <span className='text-[#007F5F]'>
-                <TypewriterText
-                  words={["Banking", "Shopping", "Sending Money"]}
-                />
+                <TypewriterText words={heroData.typewriterWords} />
               </span>
               <br /> Like Never Before with <br />
             </h1>
 
             <h1 className='relative text-2xl md:text-5xl font-bold leading-[1.25]'>
               <span className='relative'>
-                Kobo App
+                {heroData.appName}
                 <svg
                   className='absolute left-2 bottom-0 w-20 md:w-40'
                   height='60'
@@ -48,14 +77,12 @@ export default function Hero() {
             </h1>
 
             <p className='text-[#B5BBBB] my-6 text-base md:text-[22px] leading-loose md:leading-[40px]'>
-              Kobo Connect combines payments, transport, chat, food, shopping,
-              and healthcare into a single seamless platform built for modern
-              living. It’s not just an app, it’s your daily companion.
+              {heroData.description}
             </p>
           </div>
 
           <div className='flex gap-5 pt-4'>
-            <Link href='#'>
+            <Link href={heroData.appStoreLink || "#"}>
               <Image
                 src={appStoreSvg}
                 priority
@@ -64,7 +91,7 @@ export default function Hero() {
                 height={150}
               />
             </Link>
-            <Link href='#'>
+            <Link href={heroData.playStoreLink || "#"}>
               <Image
                 src={playStoreSvg}
                 alt='play-store'
@@ -77,8 +104,8 @@ export default function Hero() {
         </div>
         <div className='col-span-1 min-h-[500px]'>
           <Image
-            src={heroImg}
-            alt='hero-img'
+            src={heroData.heroImage.asset.url}
+            alt={heroData.heroImage.alt}
             width={500}
             height={500}
             priority

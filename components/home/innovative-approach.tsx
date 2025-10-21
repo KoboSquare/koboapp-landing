@@ -1,14 +1,30 @@
 import React from "react";
 
-function InnovativeApproach() {
+export interface InnovativeApproachData {
+  _id: string;
+  title: string;
+  description: string;
+  showSection: boolean;
+}
+
+interface InnovativeApproachProps {
+  data: InnovativeApproachData;
+}
+
+async function InnovativeApproach({ data }: InnovativeApproachProps) {
+  const innovativeData = data;
+
+  // Don't render if no data and section is disabled
+  if (!innovativeData || !innovativeData.showSection) {
+    return null;
+  }
   return (
     <div>
       <div className='container mx-auto py-10 md:py-20 px-4 max-w-6xl'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
           <div>
-            <h2 className='text-2xl md:text-4xl font-semibold leading-[1.25]'>
-              Innovative Approach to <br />
-              Financial Services
+            <h2 className='text-2xl md:text-4xl max-w-lg font-semibold leading-[1.25]'>
+              {innovativeData.title}
             </h2>
 
             <svg
@@ -25,12 +41,7 @@ function InnovativeApproach() {
           </div>
 
           <div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-              eget leo ac eros facilisis finibus scelerisque sit amet turpis. In
-              et venenatis leo, non luctus mauris. Maecenas efficitur volutpat
-              nibh, a aliquet elit.
-            </p>
+            <p>{innovativeData.description}</p>
           </div>
         </div>
       </div>

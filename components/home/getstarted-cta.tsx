@@ -1,19 +1,33 @@
 import { Button, Rating } from "@mantine/core";
 import React from "react";
+import {
+  getGetStartedCtaData,
+  GetStartedCtaData,
+} from "@/lib/sanity/queries/getStartedCta";
 
-function GetStartedCta() {
+interface GetStartedCtaProps {
+  data?: GetStartedCtaData;
+}
+
+async function GetStartedCta({ data }: GetStartedCtaProps) {
+  const ctaData = data || (await getGetStartedCtaData());
+
+  // Don't render if no data and section is disabled
+  if (!ctaData || !ctaData.showSection) {
+    return null;
+  }
   return (
     <div>
       <div className='container flex flex-col items-center justify-center mx-auto py-10 md:py-20 px-4 max-w-6xl text-center'>
         <div className='space-y-4 '>
           <h2 className='text-2xl md:text-4xl font-semibold leading-[1.25]'>
-            Looking for a better way to ride, pay, <br />
-            Shop, and thrive?
+            {ctaData.title}
           </h2>
 
           <div className='flex items-center justify-center'>
             <div className='flex items-center gap-2 text-lg font-medium'>
-              53,000+ <Rating value={5} /> reviews on Google Play and App Store
+              {ctaData.ratingText} <Rating value={ctaData.ratingValue} />{" "}
+              {ctaData.ratingDescription}
             </div>
           </div>
 
@@ -24,8 +38,10 @@ function GetStartedCta() {
                 backgroundColor: "#009A74",
                 color: "white",
                 borderColor: "#008E6A",
-              }}>
-              Get Started
+              }}
+              component='a'
+              href={ctaData.buttonLink || "#"}>
+              {ctaData.buttonText}
             </Button>
           </div>
 
@@ -42,9 +58,7 @@ function GetStartedCta() {
               />
             </svg>
 
-            <p className='text-lg font-medium'>
-              Lorem ipsum dolor sit amet, consectetur elit.
-            </p>
+            <p className='text-lg font-medium'>{ctaData.footerText}</p>
           </div>
         </div>
       </div>

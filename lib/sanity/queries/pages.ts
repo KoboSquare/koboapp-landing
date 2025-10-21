@@ -115,3 +115,97 @@ export const ABOUT_PAGE_QUERY = defineQuery(`
     seo
   }
 `);
+
+export const HOME_PAGE_QUERY = defineQuery(`
+  *[_type == "homePage"][0] {
+    _id,
+    title,
+    slug,
+    heroSection {
+      backgroundImage {
+        asset->{
+          _id,
+          url,
+          metadata {
+            dimensions
+          }
+        },
+        alt
+      },
+      mainTitle,
+      typewriterWords,
+      appName,
+      description,
+      heroImage {
+        asset->{
+          _id,
+          url,
+          metadata {
+            dimensions
+          }
+        },
+        alt
+      },
+      appStoreLink,
+      playStoreLink
+    },
+    koboConnectSection {
+      subtitle,
+      mainTitle,
+      description,
+      servicesImage {
+        asset->{
+          _id,
+          url,
+          metadata {
+            dimensions
+          }
+        },
+        alt
+      },
+      contactInfo[] {
+        title,
+        value,
+        icon {
+          asset->{
+            _id,
+            url,
+            metadata {
+              dimensions
+            }
+          },
+          alt
+        }
+      }
+    },
+    solutionSection {
+      title,
+      subtitle,
+      solutions[] {
+        title,
+        description
+      }
+    },
+    innovativeApproach {
+      _id,
+      title,
+      description,
+      showSection
+    },
+    faqs {
+      _id,
+      title,
+      description,
+      faqItems[] {
+        question,
+        answer
+      },
+      showSection
+    },
+    seo {
+      metaTitle,
+      metaDescription,
+      keywords
+    }
+  }
+`);
