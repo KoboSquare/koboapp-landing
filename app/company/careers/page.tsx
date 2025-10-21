@@ -1,7 +1,6 @@
 import logo from "@/assets/Logo2.svg";
 import Header from "@/components/shared/header";
 import Image from "next/image";
-import CurrentVacancies from "@/components/careers/CurrentVacancies";
 import Footer from "@/components/shared/footer";
 import { Divider } from "@mantine/core";
 import WorkBenefits from "@/components/careers/WorkBenefits";
@@ -9,8 +8,9 @@ import HeadStart from "@/components/careers/HeadStart";
 import Hero from "@/components/careers/Hero";
 import { client } from "@/lib/sanity/client";
 import { CAREERS_PAGE_DATA_QUERY } from "@/lib/sanity/queries/careers";
+import CurrentVacancies from "@/components/careers/CurrentVacancies";
 
-async function page() {
+export default async function page() {
   // Fetch careers page data from Sanity
   const careersPageData = await client.fetch(CAREERS_PAGE_DATA_QUERY);
 
@@ -42,5 +42,3 @@ async function page() {
     </div>
   );
 }
-
-export default page;

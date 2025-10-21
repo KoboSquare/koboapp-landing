@@ -1,4 +1,3 @@
-import Header from "@/components/shared/header";
 import logo from "@/assets/Logo2.svg";
 import Image from "next/image";
 import Footer from "@/components/shared/footer";
@@ -6,6 +5,7 @@ import { client } from "@/lib/sanity/client";
 import { HELP_PAGE_QUERY } from "@/lib/sanity/queries/help";
 import Hero from "@/components/help/Hero";
 import FAQAccordion from "@/components/FaqAccordion";
+import Header from "@/components/shared/header";
 
 async function page() {
   // Fetch help page data from Sanity

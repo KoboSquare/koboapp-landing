@@ -1,5 +1,4 @@
-"use client";
-import { Accordion } from "@mantine/core";
+import FAQAccordion from "../FaqAccordion";
 
 interface FAQData {
   _id: string;
@@ -28,18 +27,7 @@ function Faq({ faqData }: { faqData: FAQData }) {
           <p className='text-base font-medium'>{faqData.description}</p>
         </div>
         <div className='grid gap-4 max-w-3xl mx-auto bg-red-500 relative'>
-          <Accordion>
-            {faqData.faqItems.map((item) => (
-              <Accordion.Item key={item.question} value={item.question}>
-                <Accordion.Control className='text-left'>
-                  {item.question}
-                </Accordion.Control>
-                <Accordion.Panel className='text-[#363E3F]'>
-                  <p className='mb-2'>{item.answer}</p>
-                </Accordion.Panel>
-              </Accordion.Item>
-            ))}
-          </Accordion>
+          <FAQAccordion />
 
           <svg
             className='absolute right-0'
