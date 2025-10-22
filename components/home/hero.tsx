@@ -18,47 +18,47 @@ const wrap: Variants = {
     transition: { staggerChildren: 0.12, delayChildren: 0.05 },
   },
 };
+
 const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 16 },
+  hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    y: 0,
     transition: { type: "tween", duration: 0.5, ease: EASE },
   },
 };
 
 export default function Hero() {
   return (
-    <section className="relative h-[75dvh] overflow-hidden">
-      {/* BG with soft zoom/fade */}
-      <motion.div
-        initial={{ opacity: 0, scale: 1.04 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 1.05, ease: EASE }}
-        className="absolute inset-0 z-0"
-      >
+    <section className="relative h-[75dvh] min-h-[600px] overflow-hidden">
+      {/* Background - render immediately without animation */}
+      <div className="absolute inset-0 z-0">
         <Image
           src={heroBg}
           priority
           alt="hero-bg"
           fill
+          sizes="100vw"
+          quality={90}
           className="absolute inset-0 object-cover"
         />
-      </motion.div>
+      </div>
 
       <motion.div
         variants={wrap}
         initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.35 }}
-        className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 py-4 md:grid-cols-3 md:py-6"
+        animate="show"
+        className="relative z-10 mx-auto grid h-full max-w-6xl grid-cols-1 gap-8 px-4 py-4 md:grid-cols-3 md:py-6"
+        style={{
+          contentVisibility: "auto", // Optimize rendering
+          containIntrinsicSize: "0 600px", // Reserve space
+        }}
       >
         {/* Left copy */}
-        <div className="col-span-2 max-w-2xl py-10 text-white">
+        <div className="col-span-2 flex max-w-2xl flex-col justify-center text-white">
           <motion.h1
             variants={fadeUp}
             className="text-2xl font-bold leading-[1.25] md:text-5xl"
+            style={{ minHeight: "1.25em" }} // Reserve vertical space
           >
             Experience{" "}
             <span className="text-[#007F5F]">
@@ -77,20 +77,23 @@ export default function Hero() {
               Kobo App
               {/* animated underline */}
               <svg
-                className="absolute left-2 bottom-0 w-20 md:w-40"
+                className="pointer-events-none absolute bottom-0 left-2 w-20 md:w-40"
                 height="60"
                 viewBox="0 0 278 82"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                style={{
+                  position: "absolute",
+                  willChange: "auto", // Prevent GPU layer promotion shifts
+                }}
               >
                 <motion.path
                   d="M225.325 16.0525C206.359 9.83672 146.22 2.40419 57.3937 22.4006C-31.4322 42.397 6.15813 64.8532 36.0565 73.5818C68.4575 79.7976 151.594 86.5953 221.769 67.2337C252.195 60.6212 302.297 41.1275 259.307 16.0525C249.429 10.7624 214.736 0.578977 154.992 2.16599"
                   stroke="#007F5F"
                   strokeWidth="4"
                   initial={{ pathLength: 0, opacity: 0 }}
-                  whileInView={{ pathLength: 1, opacity: 1 }}
-                  viewport={{ once: true, amount: 0.5 }}
-                  transition={{ duration: 1, ease: EASE, delay: 0.15 }}
+                  animate={{ pathLength: 1, opacity: 1 }}
+                  transition={{ duration: 1, ease: EASE, delay: 0.5 }}
                 />
               </svg>
             </span>
@@ -114,7 +117,8 @@ export default function Hero() {
                 priority
                 alt="app-store"
                 width={150}
-                height={150}
+                height={50}
+                style={{ width: "150px", height: "auto" }}
               />
             </motion.div>
             <motion.div
@@ -127,7 +131,8 @@ export default function Hero() {
                 priority
                 alt="play-store"
                 width={150}
-                height={150}
+                height={50}
+                style={{ width: "150px", height: "auto" }}
               />
             </motion.div>
           </motion.div>
@@ -135,20 +140,23 @@ export default function Hero() {
 
         {/* Right mock */}
         <motion.div
-          initial={{ opacity: 0, y: 24, scale: 0.98 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, amount: 0.35 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.6, ease: EASE }}
-          className="col-span-1 min-h-[500px] grid place-items-center"
+          className="col-span-1 grid min-h-[500px] place-items-center"
         >
-          <Image
-            src={heroImg}
-            alt="hero-img"
-            width={500}
-            height={500}
-            priority
-            className="drop-shadow-xl"
-          />
+          <div
+            style={{ width: "500px", height: "500px", position: "relative" }}
+          >
+            <Image
+              src={heroImg}
+              alt="hero-img"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 500px"
+              className="drop-shadow-xl object-contain"
+            />
+          </div>
         </motion.div>
       </motion.div>
     </section>

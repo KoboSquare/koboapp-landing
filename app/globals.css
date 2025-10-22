@@ -25,3 +25,20 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 } */
+
+/* Prevent typewriter cursor from causing layout shifts */
+.typewriter-cursor {
+  display: inline-block;
+  width: 0.6em;
+  animation: blink 1s step-end infinite;
+}
+
+/* Prevent motion library from creating layout shifts */
+[data-framer-motion] {
+  will-change: auto !important;
+}
+
+/* Force GPU acceleration without layout shifts */
+.drop-shadow-xl {
+  transform: translateZ(0);
+}
