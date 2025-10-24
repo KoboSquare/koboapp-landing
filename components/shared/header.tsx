@@ -22,7 +22,7 @@ const navLinks = [
           <div className='p-5 flex flex-col gap-1'>
             <h2 className='text-white font-bold'>Kobo Vault</h2>
             <h6 className='text-[#B5BBBB]'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Secure, smart, seamless digital banking for everyone.
             </h6>
           </div>
 
@@ -48,7 +48,7 @@ const navLinks = [
               </span>
             </div>
             <h6 className=''>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Fast, reliable, and affordable rides at your fingertips.{" "}
             </h6>
           </div>
 
