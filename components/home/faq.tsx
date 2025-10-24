@@ -1,10 +1,9 @@
 import FAQAccordion from "../FaqAccordion";
 
 interface FAQData {
-  _id: string;
   title: string;
-  description: string;
-  faqItems: Array<{
+  subtitle: string;
+  faqs: Array<{
     question: string;
     answer: string;
   }>;
@@ -13,7 +12,7 @@ interface FAQData {
 
 function Faq({ faqData }: { faqData: FAQData }) {
   // Don't render if no data and section is disabled
-  if (!faqData || !faqData.showSection) {
+  if (!faqData) {
     return null;
   }
 
@@ -24,37 +23,10 @@ function Faq({ faqData }: { faqData: FAQData }) {
           <h2 className='text-2xl md:text-4xl font-semibold leading-[1.25] mb-4'>
             {faqData.title}
           </h2>
-          <p className='text-base font-medium'>{faqData.description}</p>
+          <p className='text-base font-medium'>{faqData.subtitle}</p>
         </div>
-        <div className='grid gap-4 max-w-3xl mx-auto bg-red-500 relative'>
+        <div className='max-w-3xl mx-auto'>
           <FAQAccordion />
-
-          <svg
-            className='absolute right-0'
-            width='425'
-            height='417'
-            viewBox='0 0 425 417'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'>
-            <rect
-              width='436'
-              height='417'
-              rx='20'
-              fill='url(#paint0_linear_2166_887)'
-            />
-            <defs>
-              <linearGradient
-                id='paint0_linear_2166_887'
-                x1='0'
-                y1='209'
-                x2='377'
-                y2='209'
-                gradientUnits='userSpaceOnUse'>
-                <stop stop-color='#FAFCFE' stop-opacity='0' />
-                <stop offset='1' stop-color='#FAFCFE' />
-              </linearGradient>
-            </defs>
-          </svg>
         </div>
       </div>
     </div>

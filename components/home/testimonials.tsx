@@ -11,9 +11,9 @@ async function Testimonials() {
   }
 
   return (
-    <div>
-      <div className='container mx-auto py-10 md:py-20 px-4 max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20'>
-        <div className='space-y-4 md:col-span-1'>
+    <div className='relative container max-w-6xl mx-auto'>
+      <div className='  py-10 md:py-20 px-4 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-baseline'>
+        <div className='space-y-4 md:col-span-1 justify-center'>
           <h2 className='text-2xl md:text-4xl font-semibold leading-[1.25]'>
             {testimonialsData.title}
           </h2>
@@ -36,10 +36,39 @@ async function Testimonials() {
           </div>
         </div>
 
-        <div className='md:col-span-1'>
-          <TestimonialCaurosel testimonials={testimonialsData.testimonials} />
+        <div className='md:col-span-1 '>
+          <div className='w-[90%]'>
+            <TestimonialCaurosel testimonials={testimonialsData.testimonials} />
+          </div>
         </div>
       </div>
+
+      <svg
+        className='absolute right-0 inset-y-0 '
+        width='425'
+        height='100%'
+        viewBox='0 0 425 417'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'>
+        <rect
+          width='436'
+          height='417'
+          rx='20'
+          fill='url(#paint0_linear_2166_887)'
+        />
+        <defs>
+          <linearGradient
+            id='paint0_linear_2166_887'
+            x1='0'
+            y1='209'
+            x2='377'
+            y2='209'
+            gradientUnits='userSpaceOnUse'>
+            <stop stopColor='#FAFCFE' stopOpacity='0' />
+            <stop offset='1' stopColor='#FAFCFE' />
+          </linearGradient>
+        </defs>
+      </svg>
     </div>
   );
 }

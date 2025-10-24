@@ -134,6 +134,7 @@ export const HOME_PAGE_QUERY = defineQuery(`
       },
       mainTitle,
       typewriterWords,
+      afterTypewriterText,
       appName,
       description,
       heroImage {
@@ -192,16 +193,7 @@ export const HOME_PAGE_QUERY = defineQuery(`
       description,
       showSection
     },
-    faqs {
-      _id,
-      title,
-      description,
-      faqItems[] {
-        question,
-        answer
-      },
-      showSection
-    },
+    faqSection,
     seo {
       metaTitle,
       metaDescription,

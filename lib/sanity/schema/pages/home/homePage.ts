@@ -56,6 +56,12 @@ export const homePage = defineType({
           validation: (Rule) => Rule.required().min(1),
         },
         {
+          name: "afterTypewriterText",
+          title: "After Typewriter Text",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        },
+        {
           name: "appName",
           title: "App Name",
           type: "string",

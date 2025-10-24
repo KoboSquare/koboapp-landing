@@ -139,7 +139,7 @@ async function Footer({ data }: FooterProps) {
               {displayData.socialLinks.map((social) => (
                 <div
                   key={social.name}
-                  className='p-2 md:p-4 rounded-full bg-[#142322] hover:bg-[#009A74] transition-all'>
+                  className='p-2 md:p-4 rounded-full bg-[#142322] size-10 md:size-12 flex flex-col justify-center cursor-pointer items-center hover:bg-[#009A74] transition-all'>
                   <Link
                     key={social.name}
                     href={social.href}

@@ -38,13 +38,15 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
       />
       <div className='space-y-4'>
         <div>
-          <em className='text-base font-medium'>&quot;{comment}&quot;</em>
+          <p className='text-base font-medium leading-relaxed'>
+            &quot;{comment}&quot;
+          </p>
         </div>
 
-        <div className='flex items-center justify-between'>
+        <div className='flex items-center justify-between gap-2'>
           <div>
-            <h6 className='text-base font-medium'>{name}</h6>
-            <p className='text-sm font-medium'>{title}</p>
+            <h6 className='text-base font-medium text-[#010101]'>{name}</h6>
+            <p className='text-sm font-medium text-[#363E3F]'>{title}</p>
           </div>
           <div>
             <Rating defaultValue={rating} readOnly />

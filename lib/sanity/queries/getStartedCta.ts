@@ -7,6 +7,7 @@ const GET_STARTED_CTA_QUERY = defineQuery(`
     title,
     ratingText,
     ratingValue,
+    ratingDescription,
     buttonText,
     buttonLink,
     footerText,

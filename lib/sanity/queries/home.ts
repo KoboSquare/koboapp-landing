@@ -23,6 +23,7 @@ export interface HomePageData {
     };
     mainTitle: string;
     typewriterWords: string[];
+    afterTypewriterText: string;
     appName: string;
     description: string;
     heroImage: {
@@ -90,11 +91,10 @@ export interface HomePageData {
     description: string;
     showSection: boolean;
   };
-  faqs: {
-    _id: string;
+  faqSection: {
     title: string;
-    description: string;
-    faqItems: Array<{
+    subtitle: string;
+    faqs: Array<{
       question: string;
       answer: string;
     }>;

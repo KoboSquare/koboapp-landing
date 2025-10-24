@@ -54,14 +54,20 @@ function TestimonialCaurosel({ testimonials }: TestimonialCauroselProps) {
 
   return (
     <Carousel
-      height='100%'
+      height={"100%"}
       slideSize='70%'
       slideGap='lg'
-      controlsOffset='sm'
-      controlSize={26}
+      withControls
+      styles={{
+        control: {
+          zIndex: 2,
+          marginRight: -30,
+          marginLeft: -25,
+        },
+      }}
       emblaOptions={{
         dragFree: false,
-        align: "start",
+        align: "center",
       }}>
       {displayTestimonials.map((testimonial, index) => (
         <Carousel.Slide key={`${testimonial.name}-${index}`} className='py-4'>

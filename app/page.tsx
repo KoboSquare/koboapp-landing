@@ -30,7 +30,7 @@ export default async function Home() {
       <OurApps />
       <Testimonials />
       <VirtualCardBanner />
-      <Faq faqData={homeData?.faqs!} />
+      <Faq faqData={homeData?.faqSection!} />
       <GetStartedCta />
       <Footer />
     </main>
