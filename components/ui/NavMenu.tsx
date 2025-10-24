@@ -33,6 +33,11 @@ function NavMenu({ link, color, buttonOptions }: INavMenu) {
   return (
     <Menu
       shadow='md'
+      styles={{
+        dropdown: {
+          margin: "0 60px",
+        },
+      }}
       opened={opened}
       onOpen={() => setOpened(true)}
       onClose={() => setOpened(false)}

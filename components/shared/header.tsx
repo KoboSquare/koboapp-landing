@@ -5,7 +5,7 @@ import { Button } from "@mantine/core";
 import NavMenu from "@/components/ui/NavMenu";
 import vaultImage from "@/assets/images/koboVault.png";
 import aboutImage from "@/assets/images/aboutUs.png";
-// import careerImage from "@/assets/images/careers.png";
+import careerImage from "@/assets/images/careers.png";
 import pressImage from "@/assets/images/press.png";
 import koboRideImage from "@/assets/images/koboRide.png";
 import { usePathname } from "next/navigation";
@@ -130,7 +130,7 @@ const navLinks = [
             <div className='p-5 flex flex-col gap-1'>
               <h2 className='font-bold'>About Us</h2>
               <h6 className=''>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Our mission is to connect Africa through technology.{" "}
               </h6>
             </div>
 
@@ -156,13 +156,13 @@ const navLinks = [
             </div>
 
             <div className='bg-[#203C3A] rounded-t-xl absolute bottom-0 right-0'>
-              {/* <Image
+              <Image
                 className='mt-2 mr-2 rounded-t-xl'
                 src={careerImage}
                 alt='career'
                 width={140}
                 height={140}
-              /> */}
+              />
             </div>
           </Link>
 
@@ -171,7 +171,9 @@ const navLinks = [
             className='h-[50%] rounded-xl border border-[#B0D0CE] relative'>
             <div className='p-5 flex flex-col gap-1'>
               <h2 className='font-bold'>Press</h2>
-              <h6 className='text-[#363E3F]'>Lorem ipsum dolor sit amet.</h6>
+              <h6 className='text-[#363E3F]'>
+                Our latest news, & media updates.
+              </h6>
             </div>
 
             <div className='bg-[#B0D0CE] rounded-t-xl absolute bottom-0 right-0'>
